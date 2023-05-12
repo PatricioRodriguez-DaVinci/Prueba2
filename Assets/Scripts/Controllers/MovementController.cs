@@ -29,15 +29,6 @@ public class MovementController : MonoBehaviour
         {
             Movement(_inputController.xAxis, _inputController.zAxis);
         }
-
-        // Cast a ray from the camera to the mouse position in 3D space
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            // Make the player look at the point where the ray intersects a collider
-            transform.LookAt(hit.point);
-        }
     }
 
     private void Movement(float xAxis, float zAxis)

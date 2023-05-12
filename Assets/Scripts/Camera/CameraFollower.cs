@@ -8,7 +8,7 @@ public class CameraFollower : MonoBehaviour
     [SerializeField] private Transform _target;
 
     [Header("Values")]
-    [Range(0f, 1f)] [SerializeField] private float _smoothSpeed = .125f; //Limita selección del editor
+    [Range(0f, 1f)] [SerializeField] private float _smoothSpeed = .125f; //Limita seleccion del editor
 
     Vector3 _offset;
 
