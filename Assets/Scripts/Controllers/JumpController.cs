@@ -7,8 +7,8 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     [Header("---------- Jump Values ----------\n")]
-    [SerializeField] private float _jumpForce = 2f;
-    [SerializeField] private float _raycastDistance = 0.3f;
+    [SerializeField] private float _jumpForce = 5f;
+    [SerializeField] private float _raycastDistance = 0.25f;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Transform _raycastOrigin;
 
@@ -30,7 +30,6 @@ public class JumpController : MonoBehaviour
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _inputController.isJumping = false;
-            _isGrounded = false; // Prevent jumping while in the air
         }
 
         // Perform the raycast to check if grounded
