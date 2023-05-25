@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1668915742}
   offset: {x: 0, y: 10, z: -8}
-  sensitivity: 5
+  sensitivity: 2
   minVerticalAngle: -25
   maxVerticalAngle: -25
 --- !u!1 &44295931
@@ -690,6 +690,7 @@ MonoBehaviour:
   jumpKey: 32
   runKey: 304
   reloadKey: 114
+  jumpController: {fileID: 0}
   xAxis: 0
   zAxis: 0
   isJumping: 0
@@ -720,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479440994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1107,7 @@ GameObject:
   - component: {fileID: 895473425}
   - component: {fileID: 895473424}
   - component: {fileID: 895473423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: w (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,6 +1387,37 @@ Transform:
   m_Father: {fileID: 1415542681}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1124735396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124735397}
+  m_Layer: 0
+  m_Name: GroundSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1124735397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124735396}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1668915742}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1152180952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,9 +1430,9 @@ GameObject:
   - component: {fileID: 1152180956}
   - component: {fileID: 1152180955}
   - component: {fileID: 1152180954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1788,19 +1820,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 0}
---- !u!114 &1668915744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668915741}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46de518c80a53fc46baa6cce7cc1c607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 1000
 --- !u!114 &1668915745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1858,6 +1877,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpForce: 5
+  _raycastDistance: 0.25
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _raycastOrigin: {fileID: 1124735397}
+  _isGrounded: 1
 --- !u!114 &1668915749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1873,6 +1898,7 @@ MonoBehaviour:
   jumpKey: 32
   runKey: 304
   reloadKey: 114
+  jumpController: {fileID: 1668915748}
   xAxis: 0
   zAxis: 0
   isJumping: 0
@@ -1921,25 +1947,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &1668915754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668915741}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7270f27a69882894cb11618b8a56fef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 2, z: -5}
-  sensitivity: 2
-  minVerticalAngle: -30
-  maxVerticalAngle: 60
 --- !u!1 &1685089218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981442370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

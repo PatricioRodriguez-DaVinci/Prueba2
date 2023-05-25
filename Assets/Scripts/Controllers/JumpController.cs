@@ -8,10 +8,13 @@ public class JumpController : MonoBehaviour
 {
     [Header("---------- Jump Values ----------\n")]
     [SerializeField] private float _jumpForce = 2f;
+    [SerializeField] private float _raycastDistance = 0.3f;
+    [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private Transform _raycastOrigin;
 
     private Rigidbody _rb;
     private InputController _inputController;
-    private bool _isGrounded = true;
+    public bool _isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,18 @@ public class JumpController : MonoBehaviour
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _inputController.isJumping = false;
+            _isGrounded = false; // Prevent jumping while in the air
+        }
+
+        // Perform the raycast to check if grounded
+        RaycastHit hit;
+        if (Physics.Raycast(_raycastOrigin.position, Vector3.down, out hit, _raycastDistance, _groundLayer))
+        {
+            _isGrounded = true; // Set _isGrounded to true if the raycast hits the ground
+        }
+        else
+        {
+            _isGrounded = false; // Set _isGrounded to false if the raycast doesn't hit the ground
         }
     }
 }
