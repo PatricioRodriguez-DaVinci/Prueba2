@@ -19,7 +19,7 @@ public class MovementController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _inputController = GetComponent<InputController>();
-        _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        _rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
     }
 
@@ -35,7 +35,7 @@ public class MovementController : MonoBehaviour
     {
         Vector3 dir = (transform.right * xAxis + transform.forward * zAxis).normalized;
 
-        if (zAxis < 0) //Caminar hacia atrás
+        if (zAxis < 0) //Caminar hacia atrï¿½s
         {
             _backAux = _backMod;
         }
