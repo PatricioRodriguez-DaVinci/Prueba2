@@ -36,5 +36,11 @@ public class EnemyChaser : Enemy
             player.TakeDamage(1);
             TakeDamage(9);
         }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            Debug.Log("Recibir daño");
+            TakeDamage(1);
+        }
     }
 }
