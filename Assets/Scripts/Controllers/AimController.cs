@@ -7,8 +7,8 @@ public class AimController : MonoBehaviour
     public Transform target;                    // The target object (player Transform)
     public Vector3 offset = new Vector3(0, 10, -8);   // The offset from the target position
     public float sensitivity = 2f;              // The mouse sensitivity for camera rotation
-    public float minVerticalAngle = -25f;       // The minimum vertical angle of the camera
-    public float maxVerticalAngle = -25f;        // The maximum vertical angle of the camera
+    public float minVerticalAngle = -30f;       // The minimum vertical angle of the camera
+    public float maxVerticalAngle = -20f;        // The maximum vertical angle of the camera
 
     private float rotationX = 0f;
 
