@@ -23,6 +23,7 @@ public class DefuserTimer : MonoBehaviour
         completedTextTimer = 0f;
         isDisplayingCompletedText = false;
         UpdateTimerUI();
+        timerText.text = string.Empty;
     }
 
     private void Update()
@@ -70,6 +71,7 @@ public class DefuserTimer : MonoBehaviour
         if (other.gameObject == player && other.gameObject.CompareTag("Player"))
         {
             isPlayerOnObject = false;
+            StartCoroutine(TextOff(2f));
         }
     }
 
@@ -95,5 +97,12 @@ public class DefuserTimer : MonoBehaviour
             alreadyCounted = true;     
         }
 
+    }
+
+    private System.Collections.IEnumerator TextOff(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        timerText.text = string.Empty;
     }
 }
