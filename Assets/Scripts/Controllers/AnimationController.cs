@@ -3,20 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(InputController))]
+//[RequireComponent(typeof(InputController))]
 
-public class AnimationController : MonoBehaviour
+public class AnimationController
 {
-    private Animator _animator;
     private InputController _inputController;
-
+    private Animator _animator;
+//    private Animator _animator;
+    public AnimationController(InputController _inCon, Animator animator)
+    {
+        _inputController = _inCon;
+        _animator = animator;
+    }
+/*
     void Start()
     {
         _animator = GetComponent<Animator>();
         _inputController = GetComponent<InputController>();
     }
+*/
 
-    private void FixedUpdate()
+
+
+    public void ArtificialFixedUpdate()
     {
         if (_inputController.xAxis != 0 || _inputController.zAxis != 0)
         {
@@ -47,6 +56,6 @@ public class AnimationController : MonoBehaviour
             _animator.SetBool("isShooting", false);
         }*/
 
-
+        Debug.Log("Animation ok");
     }
 }

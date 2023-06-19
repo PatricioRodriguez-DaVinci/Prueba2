@@ -2,32 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(InputController))]
-public class ShootController : MonoBehaviour
+//[RequireComponent(typeof(InputController))]
+public class ShootController
 {
     private InputController _inputController;
+    private GameObject _bulletPrefab;
+    private Transform _spawnPoint;
 
-    public GameObject bulletPrefab;
-    public Transform spawnPoint;
     [SerializeField] private float _spawnRate = 0.1f;
     [SerializeField] private float _reloadTime = 2f;
     private float _timeSinceLastSpawn = 0f;
     [SerializeField] private int _ammoCount = 10;
     private int _minAmmo = 3;
 
-    private void Start()
+    public ShootController(InputController ic, GameObject bp, Transform sp)
     {
-        _inputController = GetComponent<InputController>();
+        _inputController = ic;
+        _bulletPrefab = bp;
+        _spawnPoint = sp;
     }
 
-    void LateUpdate()
+    public void ArtificialLateUpdate()
     {
         _timeSinceLastSpawn += Time.deltaTime;
 
         if (_inputController.isShooting && _timeSinceLastSpawn >= _spawnRate && _ammoCount > 0)
         {
             Debug.Log("Disparar");
-            Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+            //GameObject.Instantiate(_bulletPrefab, _spawnPoint.position, _spawnPoint.rotation);
+            GameObject instancedObj = GameObject.Instantiate(_bulletPrefab, _spawnPoint.position, _spawnPoint.rotation) as GameObject;
+
             _timeSinceLastSpawn = 0f;
             _ammoCount--;
         }
