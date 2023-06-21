@@ -31,7 +31,5 @@ public class InputController
         if (Input.GetKey(runKey)) isRunning = true; else isRunning = false;
         if (Input.GetMouseButton(0)) isShooting = true; else isShooting = false;
         if (Input.GetKeyDown(reloadKey)) isReloading = true;
-
-        Debug.Log("Input ok");
     }
 }

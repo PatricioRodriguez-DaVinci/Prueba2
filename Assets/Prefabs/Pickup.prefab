@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 7669142622570297724}
   - component: {fileID: 6641390695318152121}
   m_Layer: 0
-  m_Name: Pickup_v1
+  m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

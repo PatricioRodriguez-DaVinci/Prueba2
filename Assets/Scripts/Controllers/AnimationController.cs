@@ -9,19 +9,12 @@ public class AnimationController
 {
     private InputController _inputController;
     private Animator _animator;
-//    private Animator _animator;
+
     public AnimationController(InputController _inCon, Animator animator)
     {
         _inputController = _inCon;
         _animator = animator;
     }
-/*
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
-        _inputController = GetComponent<InputController>();
-    }
-*/
 
 
 
@@ -45,17 +38,5 @@ public class AnimationController
         }
 
         _animator.SetBool("isShooting", _inputController.isShooting);
-        /*
-        if (_inputController.isShooting)
-        {
-            _animator.SetBool("isShooting", true);
-        }
-
-        else
-        {
-            _animator.SetBool("isShooting", false);
-        }*/
-
-        Debug.Log("Animation ok");
     }
 }

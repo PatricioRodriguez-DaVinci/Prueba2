@@ -35,7 +35,7 @@ public class MovementController
     {
         Vector3 dir = (_transform.right * xAxis + _transform.forward * zAxis).normalized;
 
-        if (zAxis < 0) //Caminar hacia atr�s
+        if (zAxis < 0) //Caminar hacia atras
         {
             _backAux = _backMod;
         }
@@ -50,7 +50,5 @@ public class MovementController
             _rb.MovePosition(_transform.position += dir * _movementSpeed * _backAux * Time.fixedDeltaTime);
             _backAux = 1f;
         }
-
-        Debug.Log("Movement ok");
     }
 }

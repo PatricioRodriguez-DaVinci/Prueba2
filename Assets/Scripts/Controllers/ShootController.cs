@@ -28,8 +28,6 @@ public class ShootController
 
         if (_inputController.isShooting && _timeSinceLastSpawn >= _spawnRate && _ammoCount > 0)
         {
-            Debug.Log("Disparar");
-            //GameObject.Instantiate(_bulletPrefab, _spawnPoint.position, _spawnPoint.rotation);
             GameObject instancedObj = GameObject.Instantiate(_bulletPrefab, _spawnPoint.position, _spawnPoint.rotation) as GameObject;
 
             _timeSinceLastSpawn = 0f;

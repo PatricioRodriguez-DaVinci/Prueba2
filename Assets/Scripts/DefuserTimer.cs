@@ -33,8 +33,6 @@ public class DefuserTimer : MonoBehaviour
 
             if (timer >= maxTime)
             {
-                // Perform actions when the timer reaches maxTime
-                // Add your desired logic here
                 DefuseCompleted();
             }
             else
@@ -84,7 +82,6 @@ public class DefuserTimer : MonoBehaviour
 
     private void DefuseCompleted()
     {
-        //alreadyCounted = true;
         isDisplayingCompletedText = true;
         timerText.text = "Completed";
         completedTextTimer = 0f;
