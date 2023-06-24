@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2178726334239541478
 Transform:
@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oak-2LP
       objectReference: {fileID: 0}
+    - target: {fileID: 637581771739670169, guid: c5f637b637fa9ec4a9a786141d3b0985, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2569969097574995397, guid: c5f637b637fa9ec4a9a786141d3b0985, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -152,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 194248, guid: 7a5f88a712b3f694ba4b9e8adf8df123, type: 3}
       propertyPath: m_Name
       value: OakTree-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 194248, guid: 7a5f88a712b3f694ba4b9e8adf8df123, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 424150, guid: 7a5f88a712b3f694ba4b9e8adf8df123, type: 3}
       propertyPath: m_RootOrder

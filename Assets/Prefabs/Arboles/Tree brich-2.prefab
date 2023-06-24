@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &946268623726405074
 Transform:
@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Birch-2LP
       objectReference: {fileID: 0}
+    - target: {fileID: 8605281759837171592, guid: 52c3ac567f3cd804ea704128bc9ee6da, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52c3ac567f3cd804ea704128bc9ee6da, type: 3}
 --- !u!23 &3159688892564532984 stripped
@@ -152,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 150984, guid: 6f47c06db541e84489bcc3e2ab18830e, type: 3}
       propertyPath: m_Name
       value: BirchTree-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 150984, guid: 6f47c06db541e84489bcc3e2ab18830e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 433306, guid: 6f47c06db541e84489bcc3e2ab18830e, type: 3}
       propertyPath: m_RootOrder

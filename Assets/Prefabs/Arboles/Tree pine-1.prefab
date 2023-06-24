@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7902132179008802751
 Transform:
@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine-2LP
       objectReference: {fileID: 0}
+    - target: {fileID: 6998520755910104750, guid: 0423dbbd521d7214bbd0b6505f787b18, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8044877741283738903, guid: 0423dbbd521d7214bbd0b6505f787b18, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -152,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 178346, guid: aeb91a108a22a774cbc6f1ee2639342e, type: 3}
       propertyPath: m_Name
       value: pineTree_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 178346, guid: aeb91a108a22a774cbc6f1ee2639342e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 419660, guid: aeb91a108a22a774cbc6f1ee2639342e, type: 3}
       propertyPath: m_RootOrder
