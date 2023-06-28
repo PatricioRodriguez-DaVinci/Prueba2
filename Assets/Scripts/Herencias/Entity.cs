@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour, IDamageable
 {
     public int life;
+    public BigBomb bigBomb;
 
     public virtual void TakeDamage(int dmg)
     {
@@ -13,4 +14,10 @@ public abstract class Entity : MonoBehaviour, IDamageable
         if (life <= 0)
         Destroy(gameObject);
     }
+
+/*    private void Start()
+    {
+        bigBomb.bigBombEvent += TakeDamage;    
+    }
+    */
 }

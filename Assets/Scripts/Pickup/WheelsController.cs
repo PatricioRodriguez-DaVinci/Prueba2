@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WheelsController : MonoBehaviour, IDamageable
 {
+    public BigBomb bigBomb;
+
     [SerializeField] WheelCollider FrontRight;
     [SerializeField] WheelCollider BackRight;
     [SerializeField] WheelCollider FrontLeft;
@@ -21,6 +23,11 @@ public class WheelsController : MonoBehaviour, IDamageable
     float CurrentAcceleration = 0f;
     float CurrentbreakForce = 0f;
     float CurrtntTurnAngle = 0f;
+
+    private void Start()
+    {
+        bigBomb.bigBombEvent += TakeDamage; 
+    }
 
     private void FixedUpdate()
     {
@@ -70,7 +77,7 @@ public class WheelsController : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("Bomb"))
         {
-            TakeDamage(0);
+            TakeDamage(100);
         }
     }
 
@@ -78,11 +85,10 @@ public class WheelsController : MonoBehaviour, IDamageable
     {
         if(Acceleration >= 0f)
         {
-            Acceleration -= 100f;
+            Acceleration -= dmg;
         }
         else
         {
-            Acceleration = 0f;
             CurrentAcceleration = 0f;
             Destroy(FrontRight);
         }
