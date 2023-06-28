@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity
+public abstract class Enemy : Entity
 {
     public float moveSpeed = 5.0f;
     public Transform playerTransform;

@@ -55,7 +55,7 @@ public class ChangePlayer : MonoBehaviour
         if (other.gameObject == player && other.gameObject.CompareTag("Player"))
         {
             canChange = true;
-            Debug.Log("Puede");
+//            Debug.Log("Puede");
         }
     }
 

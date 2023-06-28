@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelsController : MonoBehaviour
+public class WheelsController : MonoBehaviour, IDamageable
 {
     [SerializeField] WheelCollider FrontRight;
     [SerializeField] WheelCollider BackRight;
@@ -13,8 +13,6 @@ public class WheelsController : MonoBehaviour
     [SerializeField] Transform BackRightTransform;
     [SerializeField] Transform FrontLeftTransform;
     [SerializeField] Transform BackLeftTransform;
-
-
 
     public float Acceleration = 500f;
     public float breakingForce = 300f;
@@ -34,6 +32,8 @@ public class WheelsController : MonoBehaviour
         else
             CurrentbreakForce = 0f;
 
+    if(FrontRight != null && BackRight != null && FrontLeft != null && BackLeft)
+    {
         FrontRight.motorTorque = CurrentAcceleration;
         FrontLeft.motorTorque = CurrentAcceleration;
         BackRight.motorTorque = CurrentAcceleration;
@@ -51,7 +51,9 @@ public class WheelsController : MonoBehaviour
         UpdateWheel(FrontRight, FrontRightTransform);
         UpdateWheel(BackRight, BackRightTransform);
         UpdateWheel(FrontLeft, FrontLeftTransform);
-        UpdateWheel(BackLeft, BackLeftTransform);
+        UpdateWheel(BackLeft, BackLeftTransform);  
+    }
+
     }
 
     void UpdateWheel(WheelCollider col, Transform trans)
@@ -64,6 +66,26 @@ public class WheelsController : MonoBehaviour
         trans.rotation = rotation;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bomb"))
+        {
+            TakeDamage(0);
+        }
+    }
 
+    public void TakeDamage(int dmg)
+    {
+        if(Acceleration >= 0f)
+        {
+            Acceleration -= 100f;
+        }
+        else
+        {
+            Acceleration = 0f;
+            CurrentAcceleration = 0f;
+            Destroy(FrontRight);
+        }
+    }
 
 }
