@@ -5,7 +5,7 @@ public class DefuserTimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     public GameObject player;
-    public GameObject standingObject;
+    //public GameObject standingObject;
     public float maxTime;
     public float completedTextDuration = 2f;
     private bool isPlayerOnObject;
